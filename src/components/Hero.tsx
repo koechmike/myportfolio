@@ -14,7 +14,7 @@ type Props = {
 function Hero({ pageInfo }: Props) {
   const [text, count] = useTypewriter({
     words: [
-        `Hi 😀,The Name's ${pageInfo?.name}`,
+        `Hi 😀,The Names ${pageInfo?.name}`,
         "Just-A-Dude-Who-Loves-Tea.tsx",
         "<ButLovesToCodeMore/>",
     ],
@@ -25,7 +25,8 @@ function Hero({ pageInfo }: Props) {
     <div className="h-screen flex flex-col space-y-4 items-center justify-center text-center overflow-x-hidden z-10">
       <BackgroundCircles />
       <Image 
-      className="relative rounded-full h-32 w-32 mx-auto object-cover" src={urlForImage(pageInfo.heroImage)}
+      className="relative rounded-full h-32 w-32 mx-auto object-cover" 
+      src={urlForImage(pageInfo?.heroImage)}
       alt=''
       />
       <div className='z-20'>

@@ -18,6 +18,7 @@ import { fetchExperiences } from "../../utils/fetchExperiences";
 import { fetchProjects } from "../../utils/fetchProjects";
 import { fetchSocials } from "../../utils/fetchSocials";
 import Image from "next/image";
+import { urlForImage } from "../../sanity/lib/image";
 
 
 type Props = {
@@ -129,7 +130,7 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
     <footer className="menuButton">
       <div className="flex items-center justify-center rounded-full">
         <Image 
-        src="https://cdn.sanity.io/images/ztf6gobh/production/9b95ef0d0cd8c8617df6147a0a1d150dbc06e262-420x460.webp?w=2000&fit=max&auto=format"
+        src={urlForImage(pageInfo?.heroImage)}
         className="filter grayscale hover:grayscale-0 cursor-pointer object-cover rounded-full"
         alt=""
         />
