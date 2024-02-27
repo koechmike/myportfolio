@@ -160,6 +160,7 @@ export const getStaticProps : GetStaticProps <Props> = async () => {
     // revalidate: 10,
   };
 };
+<<<<<<< HEAD
 // export const getStaticPaths: GetStaticPaths = async () => {
 //   const pageInfo: PageInfo = await fetchPageInfo();
 //   const skills: Skill[] =  await fetchSkills();
@@ -188,3 +189,5 @@ export const getStaticProps : GetStaticProps <Props> = async () => {
 //     fallback: false, // Or 'blocking' if you want to use Incremental Static Regeneration
 //   };
 // };
+=======
+>>>>>>> ebf1c34b7e70d8b5ffc77d388783a27399a5fc26
