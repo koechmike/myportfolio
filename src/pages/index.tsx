@@ -2,15 +2,15 @@
 //import { Inter } from "next/font/google";
 import Head from "next/head";
 //import { motion, scroll, stagger, useAnimate, useScroll, useSpring, useTransform } from "framer-motion";
-import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import WorkExperience from "@/components/WorkExperience";
-import Skills from "@/components/Skills";
-import Projects from "@/components/Projects";
-import ContactMe from "@/components/ContactMe";
+import Header from "../components/Header";
+import Hero from "../components/Hero";
+import About from "../components/About";
+import WorkExperience from "../components/WorkExperience";
+import Skills from "../components/Skills";
+import Projects from "../components/Projects";
+import ContactMe from "../components/ContactMe";
 import Link from "next/link";
-import { GetServerSideProps, GetStaticProps } from "next";
+import { GetServerSideProps, GetStaticPaths, GetStaticProps } from "next";
 import { Experience, PageInfo, Project, Skill, Social } from "../../typings";
 import { fetchPageInfo } from "../../utils/fetchPageInfo";
 import { fetchSkills } from "../../utils/fetchSkills";
@@ -129,7 +129,7 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
     <Link href="#hero">
     <footer className="menuButton">
       <div className="flex items-center justify-center rounded-full">
-        <Image 
+        <img 
         src={urlForImage(pageInfo?.heroImage)}
         className="filter grayscale hover:grayscale-0 cursor-pointer object-cover rounded-full"
         alt=""
@@ -142,7 +142,7 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
 };
 export default Home;
 
-export const getServerSideProps : GetServerSideProps <Props> = async () => {
+export const getStaticProps : GetStaticProps <Props> = async () => {
   const pageInfo: PageInfo = await fetchPageInfo();
   const skills: Skill[] =  await fetchSkills();
   const experiences: Experience[] = await fetchExperiences();
@@ -157,6 +157,34 @@ export const getServerSideProps : GetServerSideProps <Props> = async () => {
       projects,
       socials,
     },
-    revalidate: 10,
+    // revalidate: 10,
   };
 };
+// export const getStaticPaths: GetStaticPaths = async () => {
+//   const pageInfo: PageInfo = await fetchPageInfo();
+//   const skills: Skill[] =  await fetchSkills();
+//   const experiences: Experience[] = await fetchExperiences();
+//   const projects: Project[] = await fetchProjects();
+//   const socials: Social[] = await fetchSocials();
+
+//   // Generate paths based on the IDs of experiences
+//   const paths = [
+//     ...experiences.map((experience) => ({
+//       params: { id: experience.id.toString() },
+//     })),
+//     ...skills.map((skill) => ({
+//       params: { id: skill.id.toString() },
+//     })),
+//     ...projects.map((project) => ({
+//       params: { id: project.id.toString() },
+//     })),
+//     ...socials.map((social) => ({
+//       params: { id: social.id.toString() },
+//     })),
+//   ];
+
+//   return {
+//     paths,
+//     fallback: false, // Or 'blocking' if you want to use Incremental Static Regeneration
+//   };
+// };

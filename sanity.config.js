@@ -11,7 +11,7 @@
  import {schema} from './sanity/schema'
 
 export default defineConfig({
-   basePath: '/studio',
+   basePath: 'http://localhost:3000/studio',
    projectId: "r7jungte",
    dataset,
    // Add and edit the content schema in the './sanity/schema' folder
