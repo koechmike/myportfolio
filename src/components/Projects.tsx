@@ -45,7 +45,7 @@ function Projects({ projects }: Props) {
                         </h4>
                         <div className='flex items-center justify-center space-x-5'>
                             {project?.technologies.map((technology) => (
-                            <img
+                            <Image
                             className='h-10 w-10 rounded-2xl'
                             key={technology._id}
                             src={urlForImage(technology?.image)}

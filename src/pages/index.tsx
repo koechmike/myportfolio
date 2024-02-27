@@ -129,7 +129,7 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
     <Link href="#hero">
     <footer className="menuButton">
       <div className="flex items-center justify-center rounded-full">
-        <img 
+        <Image 
         src={urlForImage(pageInfo?.heroImage)}
         className="filter grayscale hover:grayscale-0 cursor-pointer object-cover rounded-full"
         alt=""
@@ -142,7 +142,7 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
 };
 export default Home;
 
-export const getStaticProps : GetStaticProps <Props> = async () => {
+export const getServerSideProps : GetServerSideProps <Props> = async () => {
   const pageInfo: PageInfo = await fetchPageInfo();
   const skills: Skill[] =  await fetchSkills();
   const experiences: Experience[] = await fetchExperiences();
