@@ -160,7 +160,3 @@ export const getStaticProps : GetStaticProps <Props> = async () => {
      revalidate: 10,
   };
 };
-<<<<<<< HEAD
-
-=======
->>>>>>> ebf1c34b7e70d8b5ffc77d388783a27399a5fc26
