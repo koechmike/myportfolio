@@ -157,37 +157,10 @@ export const getStaticProps : GetStaticProps <Props> = async () => {
       projects,
       socials,
     },
-    // revalidate: 10,
+     revalidate: 10,
   };
 };
 <<<<<<< HEAD
-// export const getStaticPaths: GetStaticPaths = async () => {
-//   const pageInfo: PageInfo = await fetchPageInfo();
-//   const skills: Skill[] =  await fetchSkills();
-//   const experiences: Experience[] = await fetchExperiences();
-//   const projects: Project[] = await fetchProjects();
-//   const socials: Social[] = await fetchSocials();
 
-//   // Generate paths based on the IDs of experiences
-//   const paths = [
-//     ...experiences.map((experience) => ({
-//       params: { id: experience.id.toString() },
-//     })),
-//     ...skills.map((skill) => ({
-//       params: { id: skill.id.toString() },
-//     })),
-//     ...projects.map((project) => ({
-//       params: { id: project.id.toString() },
-//     })),
-//     ...socials.map((social) => ({
-//       params: { id: social.id.toString() },
-//     })),
-//   ];
-
-//   return {
-//     paths,
-//     fallback: false, // Or 'blocking' if you want to use Incremental Static Regeneration
-//   };
-// };
 =======
 >>>>>>> ebf1c34b7e70d8b5ffc77d388783a27399a5fc26
