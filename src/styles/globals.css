@@ -81,29 +81,26 @@ body {
   }  */
   footer {
     position: fixed;
-    bottom: 0;
-    left: 0;
+    bottom: 24px;
     right: 0;
+    width: 96px;
+    height: 96px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     padding: 20px;
-    border-top: 1px dotted var(--accent);
-    background-color: transparent;
-    background-image: radial-gradient(
-      circle at 50% 50%,
-      var(--background) 20%,
-      #fffd 20.5%,
-      #fffd 49.5%,
-      var(--background) 50%
-    );
-  
-    background-size: 15px 15px;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    -moz-backdrop-filter: blur(20px);
-    font-size: 14px;
-    line-height: 14px;
+    border-radius: 100%;
+  }
+  footer.menuButton {
+    cursor: pointer;
+    position: sticky;
+    bottom: 96px;
+    left: 192px;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    padding: 0px;
+    background: none;
   }
   
   footer svg {
@@ -277,18 +274,7 @@ body {
     border-color: #ffffff;
     backdrop-filter: blur(3px);
   }
-  footer.menuButton {
-    cursor: pointer;
-    position: sticky;
-    margin-left: 8px;
-    bottom: 18px;
-    right: 15px;
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
-    padding: 0px;
-    background: none;
-  }
+  
   
   input {
     accent-color: var(--accent);
@@ -393,9 +379,75 @@ body {
     }
     h3.aboutfontsize{
       margin-top: -15px;
+      font-size: 20px;
     }
-    
+    ul.aboutfontsize {
+      font-size: 13px;
+      line-height: 24px;
+    }
+    div.exDiv {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    div.scrollbarMobile {
+      scrollbar-width: thin;
+    }
+    p.exfontsize{
+      font-size: 1.25rem/* 20px */;
+      line-height: 1.75rem/* 28px */;
+      font-weight: 700;
+    }
+    h4.exfontsize{
+      font-size: 24px;
+      line-height: 32px;
+      line-break: auto;
+      font-weight: 300;
+    }
+    ul.exfontsize {
+      font-size: 13px;
+      line-height: 24px;
+      list-style-type: circle;
+    }
+    p.pgfontsize {
+      font-size: 13px;
+      line-height: 24px;
+      list-style-type: circle;
+    }
+
+    article.exArticle {
+      width: 350px;
+      height: 540px;
+      overflow-x: hidden;
+      scroll-snap-align: center;
+    }
+    div.exProject {
+      width: 350px;
+      height: 540px;
+      overflow-x: hidden;
+      scroll-snap-align: center;
+    }
+    img.exImage {
+      width: 144px;
+      height: 96px;
+      object-position: left;
+    }
+    div.skImage {
+      gap: 24px;
+    }
   }
+
+  @media only screen and (max-width: 768px) {
+    h4.cmFont {
+      font-size:20px;
+      line-height: 0px;
+    }
+    div.cmFont {
+      --tw-space-y-reverse: 0;
+      margin-top: calc(1.25rem/* 20px */ * calc(1 - var(--tw-space-y-reverse)));
+      margin-bottom: calc(1.25rem/* 20px */ * var(--tw-space-y-reverse));
+    }
+  }
+  
   button.heroButton {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -463,6 +515,14 @@ body {
     @apply outline outline-1 outline-[#f7ac0a91] bg-white bg-opacity-60 rounded-sm border-b-4 px-6 py-4 border-[#ffffff] backdrop-blur-[1px]
     text-black placeholder-[#000000] transition-all focus:border-[#F7AB0A] focus:backdrop-blur-[0px] focus:outline focus:outline-1 
     focus:outline-[#ffffff] focus:text-black hover:border-[#F7AB0A] cursor-text hover:backdrop-blur-[0px]
+  }
+  @media only screen and (max-width: 768px) {
+    .cmNameInput {
+      width: 175px;
+    }
+    .cmEmailInput {
+      width: 178px;
+    }
   }
   .progress-bar {
     position: fixed;

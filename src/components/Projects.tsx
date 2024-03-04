@@ -15,10 +15,10 @@ function Projects({ projects }: Props) {
     whileInView={{ opacity: 1 }}
     transition={{ duration: 1.5 }}
     className='h-screen relative flex overflow-hidden flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0'>
-        <h3 className='absolute top-24 uppercase tracking-[15px] text-white backdrop-blur-[2px] text-2xl'>
+        <h3 className='absolute aboutfontsize top-24 uppercase tracking-[15px] text-white backdrop-blur-[2px] text-2xl'>
             Projects
         </h3>
-        <div className='relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-thumb-[#F7AB0A] scrollbar-track-[#00000083]'>
+        <div className='relative w-full aboutfontsize flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar scrollbar-thumb-[#F7AB0A] scrollbar-track-[#00000083]'>
             {projects?.map((project, i) => (
                 <div 
                 key={project._id}
@@ -35,12 +35,14 @@ function Projects({ projects }: Props) {
                         y: 0,
                         opacity: 1,
                     }}
-                    className="w-64 h-64 mt-16 object-cover md:w-80 md:h-95 xl:w-[500px] xl:h-[600px] rounded-2xl"
+                    className="w-64 h-64 mt-16 exImage object-cover md:w-80 md:h-95 xl:w-[500px] xl:h-[600px] rounded-2xl"
                     src={urlForImage(project?.image)} 
                     alt=''
                     />
-                    <div  className='space-y-10 px-0 md:px-10 max-w-6xl'>
-                        <h4 className='text-4xl font-semibold text-center'><span className='underline decoration-[#F7AB0A]'>Case Study {i + 1} of {projects.length}:</span>{" "}
+                    <div className='space-y-10 px-0 md:px-10 max-w-6xl'>
+                        <h4 className='text-4xl exfontsize font-semibold text-center'>
+                            <span className='underline decoration-[#F7AB0A]'>Case Study {i + 1} of {projects.length}:
+                            </span>{" "}
                         {project?.title}
                         </h4>
                         <div className='flex items-center justify-center space-x-5'>
@@ -53,7 +55,7 @@ function Projects({ projects }: Props) {
                             />
                         ))}
                         </div>
-                        <p className='aboutfontsize text-lg md:text-left'>
+                        <p className='pgfontsize max-h-60 xl:max-h-80 overflow-y-scroll scrollbar-thin scrollbar-thumb-[#F7AB0A] scrollbar-track-[#00000083] text-lg md:text-left'>
                         {project?.summary}
                         </p>
                     </div>

@@ -19,8 +19,7 @@ import { fetchProjects } from "../../utils/fetchProjects";
 import { fetchSocials } from "../../utils/fetchSocials";
 import Image from "next/image";
 import { urlForImage } from "../../sanity/lib/image";
-
-
+import { BsArrowUpCircleFill } from "react-icons/bs";
 type Props = {
   pageInfo: PageInfo;
   experiences: Experience[];
@@ -81,9 +80,14 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
 
   // const [isOpen, setIsOpen] = useState(false);
   // const scope = useMenuAnimation(isOpen);
-
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
-    <div className="text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden scrollbar scrollbar-thumb-[#F7AB0A] scrollbar-track-[#00000083] z-0">
+    <div className="text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden scrollbar-thin scrollbar-thumb-[#F7AB0A] scrollbar-track-[#00000083] z-0">
     {/* <ProgressBar /> */}
     <Head>
       <title>{pageInfo?.name} - Portfolio</title>
@@ -119,7 +123,7 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
 
     {/* Contact Me */}
     <section id="contact" className="snap-start">
-    <ContactMe />
+    <ContactMe pageInfo={pageInfo}/>
     </section>
 
     {/* <div ref={scope}>
@@ -127,13 +131,17 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
       <Menu />
     </div> */}
     <Link href="#hero">
-    <footer className="menuButton">
-      <div className="flex items-center justify-center rounded-full">
-        <img 
+    <footer className="snap-center rounded-full">
+      <div>
+        {/* <img 
         src={urlForImage(pageInfo?.heroImage)}
         className="filter grayscale hover:grayscale-0 cursor-pointer object-cover rounded-full"
         alt=""
-        />
+        /> */}
+        <BsArrowUpCircleFill
+            className="md:w-14 md:h-14 h-10 w-10 bottom-2 right-2 fixed cursor-pointer animate-bounce"
+            onClick={handleScrollToTop}
+          />
       </div>
     </footer>
     </Link>
