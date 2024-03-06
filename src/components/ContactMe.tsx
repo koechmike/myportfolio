@@ -33,7 +33,7 @@ function ContactMe({ pageInfo }: Props) {
                 I have got just what you need.{" "}
                 <span className='decoration-[#F7AB0A]/50 underline'>Lets Talk.</span>
             </h4>
-            <div className='space-y-10'>
+            <div className='space-y-10 contact'>
                 <div className='flex items-center space-x-5 cmFont justify-center'>
                     <PhoneIcon className='text-[#F7AB0A] h-7 w-7 animate-pulse'/>
                     <p className='text-2xl'>{pageInfo?.phoneNumber}</p>

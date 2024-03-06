@@ -9,18 +9,14 @@ type Props = {
 
 function About({ pageInfo }: Props) {
   return (
-    <motion.div 
-    initial={{ opacity: 0 }}
-    whileInView={{ opacity: 1 }}
-    transition={{ duration: 1.5 }}
-    className='flex flex-col relative h-screen text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center'>
+    <div className='flex flex-col relative h-screen text-center md:text-left md:flex-row max-w-7xl px-5 justify-evenly mx-auto items-center'>
         <h3 className='absolute top-24 uppercase tracking-[15px] text-white text-2xl backdrop-blur-[2px] rounded-full pl-2 p-2 aboutfontsize'>
          About
         </h3>
         <motion.img
             initial={{
-                x: -500,
-                z: 300,
+                x: -100,
+                z: 100,
                 opacity: 0,
             }}
             transition={{
@@ -29,7 +25,7 @@ function About({ pageInfo }: Props) {
             whileInView={{ opacity: 1, x:0, z:0 }}
             // viewport={{ once :true }}
             src={urlForImage(pageInfo.profilePic)}
-            className="-mb-20 md:mb-0 flex-shrink-0 w-48 h-48 mt-16 rounded-full object-cover md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]"
+            className="-mb-10 md:mb-0 flex-shrink-0 w-48 h-48 mt-16 rounded-full object-cover md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]"
         />
         <div className='space-y-10 px-0 md:px-10'>
           <h4 className='text-4xl font-semibold aboutfontsize'>
@@ -56,7 +52,7 @@ function About({ pageInfo }: Props) {
          to impactful projects for the betterment of society. */}
          {pageInfo?.backgroundInformation}
         </p>
-    </motion.div>
+    </div>
   )
 }
 

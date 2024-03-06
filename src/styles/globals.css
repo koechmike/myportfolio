@@ -378,8 +378,8 @@ body {
       line-height: 30px;
     }
     h3.aboutfontsize{
-      margin-top: -15px;
-      font-size: 20px;
+      margin-top: -10px;
+      font-size: 24px;
     }
     ul.aboutfontsize {
       font-size: 13px;
@@ -427,24 +427,32 @@ body {
       scroll-snap-align: center;
     }
     img.exImage {
-      width: 144px;
-      height: 96px;
+      width: 324px;
+      height: 180px;
       object-position: left;
     }
     div.skImage {
-      gap: 24px;
+      gap: 18px;
     }
   }
 
   @media only screen and (max-width: 768px) {
     h4.cmFont {
+      font-size: 20px;
+      line-height: 24px;
+      line-break: auto;
+    }
+    span.cmFont {
       font-size:20px;
-      line-height: 0px;
+      line-height: 12px;
     }
     div.cmFont {
       --tw-space-y-reverse: 0;
       margin-top: calc(1.25rem/* 20px */ * calc(1 - var(--tw-space-y-reverse)));
       margin-bottom: calc(1.25rem/* 20px */ * var(--tw-space-y-reverse));
+    }
+    div.contact {
+      @apply space-y-5
     }
   }
   
