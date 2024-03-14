@@ -39,7 +39,7 @@ function Hero({ pageInfo }: Props) {
         </h2>
         <div className='pt-5 xl:space-x-3 md:space-x-2'>
           <Link href="#about"><motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9}} transition={{ duration: 0.005 }} className='heroButton'>About</motion.button></Link>
-          <Link href="#experince"><motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9}} transition={{ duration: 0.005 }} className='heroButton'>Experince</motion.button></Link>
+          <Link href="#experience"><motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9}} transition={{ duration: 0.005 }} className='heroButton'>Experince</motion.button></Link>
           <Link href="#skills"><motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9}} transition={{ duration: 0.005 }} className='heroButton'>Skills</motion.button></Link>
           <Link href="#projects"><motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9}} transition={{ duration: 0.005 }} className='heroButton'>Projects</motion.button></Link>
         </div>
